@@ -121,3 +121,4 @@ Route::get('/dashboards/pooltests', [PoolTestController::class, 'pooltests'])->n
     Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');
     Route::get('{any}', [RoutingController::class, 'root'])->name('any');
 
+    Route::get('/sidebar-menu', [SidebarController::class, 'getPoolMenu'])->name('sidebar.menu');

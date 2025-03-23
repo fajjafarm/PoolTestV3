@@ -10,8 +10,8 @@ class CreatePoolListTable extends Migration
     public function up()
     {
         Schema::create('pool_list', function (Blueprint $table) {
-            $table->ulid('id')->primary();
-            $table->unsignedBigInteger('client_id');
+            $table->ulid('pool_id')->primary();
+            $table->string('client_id');
             $table->string('pool_name');
             $table->string('pool_type');
             $table->decimal('length', 8, 2);
