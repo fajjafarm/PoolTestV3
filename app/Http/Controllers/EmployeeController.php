@@ -1,18 +1,18 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
+use App\Models\User;
 
-class EmployeeController extends Controller
+class UserController extends Controller
 {
-    public function show(Employee $employee)
+    public function show(User $user)
     {
-        $trainingByYear = $employee->trainingSessions()
+        $trainingByYear = $user->trainingSessions()
             ->selectRaw('YEAR(date) as year, SUM(duration) as total_hours')
             ->groupBy('year')
             ->orderBy('year', 'desc')
             ->get();
 
-        return view('employees.show', compact('user', 'trainingByYear')); // Updated view path
+        return view('users.show', compact('user', 'trainingByYear')); // Updated view path
     }
 }
