@@ -41,11 +41,6 @@ require __DIR__ . '/auth.php';
     Route::post('/training', [TrainingSessionController::class, 'store'])->name('training.store');
 
 
-   Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name('employees.show');
-    Route::get('/training/create', [TrainingSessionController::class, 'create'])->name('training.create');
-    Route::post('/training', [TrainingSessionController::class, 'store'])->name('training.store');
-
-
 Route::get('/pool-tests/{pool_id}', [PoolTestController::class, 'index'])->name('pool-tests.create');
 Route::post('/pool-tests/{pool_id}', [PoolTestController::class, 'store'])->name('pool-tests.store');
 
