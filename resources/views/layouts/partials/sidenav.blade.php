@@ -29,7 +29,7 @@
         <!--- my menu -->
 
         <ul class="side-nav">
-        @include('partials.sidebar-menu', ['pools' => $pools])
+        @include('partials.sidebar-menu')
 
             
             <li class="side-nav-title">Thermal Suite Checks</li>
