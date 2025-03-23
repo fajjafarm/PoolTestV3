@@ -20,6 +20,7 @@ use App\Http\Controllers\ThermalSuiteCheckController;
 use App\Http\Controllers\BikeRentalOrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TrainingSessionController;
+use App\Http\Controllers\SidebarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
