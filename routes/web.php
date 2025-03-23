@@ -96,7 +96,7 @@ Route::post('/plantroom', [PlantroomController::class, 'store'])->name('plantroo
 //regularuser access but only if they are associated with the company
 //Route::post('/water-balance-checks/waterBalanceTestForm', [WaterBalanceTestController::class, 'submitWaterTest'])->name('water_balance_checks.waterBalanceTestForm');
 
-Route::post('/equipment-check', [EquipmentCheckController::class, 'store'])->name('equipment-check');
+Route::post('/equipment-check/submit', [EquipmentCheckController::class, 'store'])->name('equipment-check');
 Route::get('/equipment-check', [EquipmentCheckController::class, 'index'])->name('equipment-check');
 
 Route::get('/actionlog/{testId}', [ActionLogController::class, 'create'])->name('actionlog.create');
