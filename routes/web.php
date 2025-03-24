@@ -109,7 +109,7 @@ Route::post('/pooltest', [PoolTestController::class, 'store'])->name('pooltest.s
 
 Route::get('/dashboards/pooltests', [PoolTestController::class, 'pooltests'])->name('pooltests');
 
-
+Route::get('/sidebar-menu', [SidebarController::class, 'getPoolMenu'])->name('sidebar.menu');
 Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('', [RoutingController::class, 'index'])->name('root');
     Route::get('/home', fn()=>view('dashboards.index'))->name('home');
@@ -118,4 +118,4 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
     Route::get('{any}', [RoutingController::class, 'root'])->name('any');
 });
 
-    Route::get('/sidebar-menu', [SidebarController::class, 'getPoolMenu'])->name('sidebar.menu');
+
