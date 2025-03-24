@@ -22,10 +22,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TrainingSessionController;
 use App\Http\Controllers\SidebarController;
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\Auth\VerificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,22 +35,6 @@ use App\Http\Controllers\Auth\VerificationController;
 //super admin access only
 //Route::resource('pool-tests/{pool_id}', PoolTesttController::class)->only(['index', 'store']);
 require __DIR__ . '/auth.php';
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
-
-Route::get('/forgot-password', [ResetPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/forgot-password', [ResetPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
-
-Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
-Route::post('/email/verification-notification', [VerificationController::class, 'resend'])->name('verification.resend');
 
     Route::get('/users/{user:id}', [UserController::class, 'show'])->name('users.show'); // Updated
     Route::get('/training/create', [TrainingSessionController::class, 'create'])->name('training.create');
